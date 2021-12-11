@@ -17,7 +17,7 @@ const removeAccount = () => {
   const last_element = element.lastChild;
   element.removeChild(last_element);
 };
-// (push 테스트)
+// (git clone 성공)
 // (1) then 문법을 중첩한 방식
 const responseList_0 = () => {
   // const element = document.querySelector('#responseList');
