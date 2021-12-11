@@ -18,6 +18,7 @@ const removeAccount = () => {
   element.removeChild(last_element);
 };
 
+// (1) then 문법을 중첩한 방식
 const responseList_0 = () => {
   // const element = document.querySelector('#responseList');
   const element = document.getElementById('responseList');
@@ -29,6 +30,7 @@ const responseList_0 = () => {
   });
 };
 
+// (1) then 문법을 return 하는 방식
 const responseList_1 = () => {
   // const element = document.querySelector('#responseList');
   const element = document.getElementById('responseList');
