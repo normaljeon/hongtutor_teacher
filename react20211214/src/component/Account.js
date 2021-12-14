@@ -12,7 +12,7 @@ const Account = () => {
     email: 'Hong@classum.com'
   };
 
-  // const [state명, set-state명]
+  // const [state명, setState명]
   const [accountList, editAccountlist] = useState([initial_Data]);
   const [apiList, getApiList] = useState([]);
   const [number, setNumber] = useState(0);
@@ -31,12 +31,19 @@ const Account = () => {
 
   const addAccountlist = () => {
     // 덮어써줌 + setState만 이용해야 함
-    editAccountlist([...accountList, { ...initial_Data, id: accountList.length + 1 }]);
-    // setNumber(number + 5);
-    // setNumber(number + 4);
-    // setNumber(number + 3);
-    // setNumber(number + 2);
-    // setNumber(number + 1);
+    editAccountlist([
+      ...accountList,
+      {
+        ...initial_Data,
+        id: accountList.length + 1
+      }
+    ]);
+    setNumber(number + 5);
+    setNumber(number + 4);
+    setNumber(number + 3);
+    console.log(number);
+    setNumber(number + 2);
+    setNumber(number + 1);
 
     // setNumber((prev) => prev + 1);
     // setNumber((prev) => prev + 2);
@@ -48,7 +55,7 @@ const Account = () => {
     // console.log(accountList);
   };
 
-  // console.log(number);
+  console.log(number);
   // console.log('rendered');
 
   const removeAccountlist = () => {
