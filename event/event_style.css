@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  position: relative;
+}
+
+#left-side {
+  width: 300px;
+  height: 100vh;
+  background-color: skyblue;
+}
+
+/* (1) 사이드바 이동방향 : 오른쪽 */
+/*      왼쪽면      |        오른쪽면        */
+/*    width 증가    | width 감소 , left 증가 */
+
+/* (2) 사이드바 이동방향 : 왼쪽 */
+/*      왼쪽면      |        오른쪽면        */
+/*    width 감소    | width 증가 , left 감소 */
+
+#vertical-sidebar {
+  width: 10px;
+  height: 100vh;
+
+  position: absolute;
+  left: 300px;
+  top: 0px;
+
+  cursor: col-resize;
+  background-color: black;
+}
+
+#right-side {
+  width: calc(100% - 300px - 10px);
+  height: 100vh;
+
+  position: absolute;
+  left: calc(300px + 10px);
+  top: 0px;
+
+  background-color: burlywood;
+}
