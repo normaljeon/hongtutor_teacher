@@ -13,25 +13,24 @@ const element_rightSide = document.getElementById('right-side');
 /*    width 감소    | width 증가 , left 감소 */
 
 const resize = (resize_col) => {
-  console.log(resize_col);
   element_leftSide.style.width = `${resize_col}px`;
   element_verticalSidebar.style.left = `${resize_col}px`;
   element_rightSide.style.left = `${resize_col + 10}px`;
-  // element_rightSide.style.width = calc(100 % -resize_col) + 'px';
-  // element_rightSide.style.width = `${(100 % - resize_col}px`;
-  element_rightSide.style.width = `calc(100% - ${resize_col - 10}px)`;
+  element_rightSide.style.width = `calc(100% - ${resize_col + 10}px)`;
 };
 
-// resize(300);
-// const resize_col = '100px';
+let startX = 3;
 
-let startX;
-let endX;
-let offset_x = 0;
 element_verticalSidebar.addEventListener('mousedown', (e) => {
-  //   console.log(e.pageX);
-  startX = e.pageX; // e.clientX
-  element_verticalSidebar.addEventListener('click', (e) => {
-    resize(e.pageX);
+  console.log(e.clientX);
+
+  element_verticalSidebar.addEventListener('mousemove', (e) => {
+    console.log('//// pageX ////');
+    console.log(e.clientX);
+
+    // -5는 중간값이 필요할 것 같아 넣었는데요. 사실 이게 맞는지 잘 모르겠습니다 ㅠㅠ
+    resize(e.pageX - 5);
   });
 });
+
+// element_verticalSidebar.removeEventListener();

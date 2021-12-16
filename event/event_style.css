@@ -30,7 +30,7 @@ body {
 }
 
 #right-side {
-  width: calc(100% - 300px - 10px);
+  width: calc(100% - (300px + 10px));
   height: 100vh;
 
   position: absolute;
@@ -39,3 +39,9 @@ body {
 
   background-color: burlywood;
 }
+
+/* #target {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+} */

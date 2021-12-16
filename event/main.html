@@ -17,11 +17,11 @@
       <p id="title">Alert 박스</p>
       <button id="close">X</button>
     </div>
+    <button id="target1" onclick="changeName('제목 입력하세요.')">버튼1 (onclick으로 구현)</button>
+    <button id="target2" onclick="changeName('비번 입력하세요.')">버튼2 (onclick으로 구현)</button>
+    <input type="button" id="target" value="button" /> -->
 
-    <button onclick="changeName('제목 입력하세요.')">버튼1 (onclick으로 구현)</button>
-    <button onclick="changeName('비번 입력하세요.')">버튼2 (onclick으로 구현)</button>
-
-    <script>
+    <!-- <script>
       function changeName(description) {
         const element_container = document.getElementById('alert');
         const element_title = document.getElementById('title');
@@ -30,6 +30,27 @@
       }
 
       // (2) 이벤트리스너 : onclick 대신에 이벤트 + 콜백함수 사용하기
+      // https://opentutorials.org/course/1375/6761
+      // 장점 ① : 다른 사람의 코드를 수정하지 않아도 됨
+      // 장점 ② : 하나의 엘리먼트에 복수개의 이벤트를 등록할 수 있음 (인라인 방식은 덮어쓰기 함)
+      // =========
+      const t1 = document.getElementById('target1');
+      const t2 = document.getElementById('target2');
+      // 장점 ③ : 하나의 함수로 여러개의 객체를 관리할 수 있음 (타겟식별 장치 : event.target.id)
+      function btn_listener(event) {
+        switch (event.target.id) {
+          case 'target1':
+            alert(1);
+            break;
+          case 'target2':
+            alert(2);
+            break;
+        }
+      }
+      t1.addEventListener('click', btn_listener);
+      t2.addEventListener('click', btn_listener);
+      // =========
+
       document.getElementById('close').addEventListener('click', () => {
         document.getElementById('alert').style.display = 'none';
       });
