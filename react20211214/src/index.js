@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import EventListener from './component/EventListener';
 import './index.css';
 // import App from './App';
-import Account from './component/Account';
+// import Account from './component/Account';
+
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Account />
+    {/* <Account /> */}
+    <EventListener />
   </React.StrictMode>,
   document.getElementById('root')
 );
