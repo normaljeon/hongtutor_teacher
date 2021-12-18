@@ -31,8 +31,8 @@ body {
 }
 
 #right-side {
-  width: calc(100% - 310px);
   /* width: 100%; */
+  width: calc(100% - 310px);
   height: 100%;
   background-color: cornsilk;
 }

@@ -3,9 +3,9 @@ import React, { useEffect } from 'react';
 import './EventListener.css';
 
 const EventListener = () => {
-  //  바닐라js 처럼 defer 개념을 React의 useEffect 안에서 구현해야 함
-  //   const dragElement = document.getElementById('drag-side');
-  //   console.log(dragElement);
+  //  바닐라js의 defer 개념처럼, React의 useEffect 안에서 EventListener를 구현해야 함
+  //  const dragElement = document.getElementById('drag-side');
+  //  console.log(dragElement);
 
   useEffect(() => {
     const leftElement = document.getElementById('left-side');
@@ -15,16 +15,15 @@ const EventListener = () => {
     const resize = (event) => {
       let resize_col = event.x - 5;
 
-      //   leftElement.style.width = `${resize_col}px`;
-      leftElement.style.width = event.x + 'px';
+      leftElement.style.width = `${resize_col}px`;
+      //   leftElement.style.width = event.x + 'px';
 
-      // dragElement.style.left = `${resize_col}px`;
-      dragElement.style.left = event.x + 'px';
+      dragElement.style.left = `${resize_col}px`;
+      //   dragElement.style.left = event.x + 'px';
 
       //   rightElement.style.left = `${resize_col + 10}px`;
-      //   rightElement.style.width = `calc(100% - ${resize_col + 10}px)`;
-      //   rightElement.style.width = (100 % -event.x) + 'px';
-      rightElement.style.width = `calc(100% - ${event.x}px)`;
+      rightElement.style.width = `calc(100% - ${resize_col}px)`;
+      //   rightElement.style.width = `calc(100% - ${event.x}px)`;
     };
 
     dragElement.addEventListener('mousedown', () => {
@@ -33,8 +32,6 @@ const EventListener = () => {
         document.removeEventListener('mousemove', resize);
       });
     });
-
-    // console.log(dragElement);
   }, []);
 
   return (
