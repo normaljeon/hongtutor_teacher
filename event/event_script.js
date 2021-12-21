@@ -26,8 +26,11 @@ const resize = (event) => {
   // element_rightSide.style.left = event.x + 10 + 'px';
   // element_rightSide.style.width = `calc(100% - ${event.x + 10}px)`;
 
-  let resize_col = event.pageX - 5;
+  // let resize_col = event.pageX - 5;
+  let resize_col = event.x;
+  // element_leftSide.style.width = `${resize_col}px`;
   element_leftSide.style.width = `${event.x}px`;
+
   element_verticalSidebar.style.left = `${resize_col}px`;
   element_rightSide.style.left = `${resize_col + 10}px`;
   element_rightSide.style.width = `calc(100% - ${resize_col + 10}px)`;
